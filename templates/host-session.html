@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ session_key }}</title>
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;500&family=Poppins:wght@400;500&display=swap');
+
+
+*{
+margin: 0;
+padding: 0;
+font-family: 'Poppins', sans-serif;
+}
+body, html{
+
+overflow-x: hidden;
+}
+body
+{
+position: relative;
+}
+.banner{
+width:100%;
+height: 100vh;
+
+}
+
+nav{
+display: flex;
+align-items: center;
+padding: 20px 8%;
+
+}
+
+nav .menu-img{
+color:rgb(197, 197, 197);
+width: 35px;
+margin-right: 20px;
+cursor: pointer;
+}
+
+nav .logo{
+/* font-family: 'poppins' 'Satisfy', cursive; */
+font-family: 'Poppins', sans-serif;
+margin-top: 8px;
+color: #000;
+width: 105px;
+cursor: pointer; 
+
+}
+
+nav ul{
+color: #000;
+flex: 1;
+text-align: right;
+}
+
+nav ul li:hover{
+color:#6C63FF;
+
+}
+
+nav ul li{
+display: inline-block;
+list-style: none;
+margin: 0 20px;
+}
+.navbar{
+width: 85%;
+margin:auto;
+padding:35px 0;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.logo{
+width: 120px;
+cursor: pointer;
+}
+.navbar ul li{
+list-style: none;
+display: inline-block;
+margin: 0 20px;
+position: relative;
+}
+.navbar ul li a{
+text-decoration: none;
+text-transform: uppercase;
+}
+.navbar ul li::after{
+content: '';
+height: 3px;
+width: 0;
+background: #009688;
+position: absolute;
+left: 0;
+bottom: -10px;
+transition: 0.5s;
+}
+.navbar ul li:hover::after{
+width: 100%;
+}
+
+
+a{
+text-decoration: none;
+color: #000000;
+
+}
+a:hover{
+color:#6C63FF;
+}
+
+
+.main{
+    padding: 30px 150px;
+    /* background-color: #f00; */
+}
+
+.inner{
+    display: flex;
+    align-items: flex-start;
+}
+
+.main h4{
+    /* color: #969696; */
+    margin-left: 10px;
+}
+
+.main h5{
+    color: #6C63FF;
+    /* margin-left: 10px; */
+}
+
+.main-con{
+    background-color: #6C63FF;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    color: #f0f0f0;
+}
+
+.member-list{
+    background-color: #ffffff;
+    padding: 0px;
+    border-radius: 8px;
+    /* margin-top: 25px; */
+}
+.main .user{
+    margin-top: 5px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    /* display; */
+}
+
+.main .user-req{
+    margin-top: 5px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    /* display; */
+}
+
+.sec-1{
+    display: inline-block;
+    width: 65%;
+}
+
+.sec-2{
+    margin-left: 4%;
+    display: inline-block;
+    width: 30%;
+    padding: 0px;
+}
+.sec-2 .name{
+    align-items: center;
+    background-color: #ffffff;
+    padding: 6px;
+    width: 100%;
+    border-radius: 4px;
+    display: flex;
+    margin-top: 10px;
+    
+}
+.sec-1 .name{
+    align-items: center;
+    background-color: #ffffff;
+    padding: 6px;
+    width: 98%;
+    height: 40px;
+    border-radius: 4px;
+    display: flex;
+    margin-top: 10px;
+    
+}
+.sec-2 .name .rn{
+    color: #1a1a1a;
+    margin-left: 10px;
+    align-self: center;
+    align-content: center;
+    width:69%;
+    /* background-color: #009688; */
+
+}
+
+.ac{
+    margin-left: 5px;
+    background-color: rgb(51, 168, 27);
+    color: #fff;
+    border:none; 
+    padding:2px 7px;
+    border-radius:4px; 
+    display: inline-flex;
+}
+
+.dn{
+    margin-left: 5px;
+    background-color: #da443f;
+    color: #fff;
+    border:none; 
+    padding:2px 7px;
+    border-radius:4px; 
+    display: inline-flex;
+}
+.req{
+    width: 30%;
+    display: inline-block;
+   
+}
+
+.alert{
+    margin-left: 40px;
+    background-color: #586cc2;
+    color: #fff;
+    border:none; 
+    padding:2px 7px;
+    border-radius:4px; 
+    display: inline-flex;
+}
+
+.block{
+    margin-left: 5px;
+    background-color: #da443f;
+    color: #fff;
+    border:none; 
+    padding:2px 7px;
+    border-radius:4px; 
+    display: inline-flex;
+}
+
+.us-name{
+    color: #1a1a1a;
+    margin-left: 10px;
+    align-self: center;
+    align-content: center;
+    width:69%;
+}
+
+.ev{
+    width: 15%;
+    display: inline-block;
+}
+
+.View{
+    margin-left: 5px;
+    background-color: #3fda66;
+    color: #fff;
+    border:none; 
+    padding:2px 7px;
+    border-radius:4px; 
+    display: inline-flex;
+}
+
+.stats{
+    color: #6C63FF;
+    font-weight: bold;
+    height: 30px;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+    background-color: #f8f8f8;
+    color: #6C63FF;
+    border-color: #6C63FF;
+    /* border:10px;  */
+    padding:2px 7px;
+    border-radius:4px; 
+    display: inline-flex;
+}
+
+    </style>
+</head>
+<body>
+    <form  method="POST">
+    <input type="hidden" name="csrfmiddlewaretoken" value="TpxEDxI3of7N1nwdOUfkDtAvqF42xpFZbJRXCrmT3ABtj9lf9QwBp5zq2fWR2K0Q">
+    <div class="banner">
+        <nav>
+           
+            <img src="/static/img/target.png" class="menu-img"/>
+            <h1 class="logo">HAMS</h1>
+            <ul>
+                <li>About</li>
+                <li><a href="/contactus/">Contact Us</a></li>
+                <li><a href="/profile/">Profile</a></li>
+                <li style="color: rgb(102, 123, 245);"><a style="color: #f00;     font-weight: 600;" href="/logout/">Log Out</a></li>
+            </ul>
+        </nav>
+        <div class="main">
+            <h4>Session</h4>
+            <div class="main-con">
+                Key :     {{session_key}}<br>
+                Host : {{ host_name }} ({{session_admin}}) <br>
+                <!-- <button type="button" onclick="acceptRequest('sanju@hams.com')">click me</button> -->
+            </div><br>
+            <div class="inner">
+                <div class="sec-1">
+                    <h4>Members</h4>
+                    <div class="member-list">
+                    <div class="user" id="us-list">
+                            <!-- <div class="name">
+                                <div class="us-name">Adarsh C V</div>
+                                <button class="stats">Attention Stats</button>
+                                <div class="ev">
+                                    <button class="alert">Alert </button>
+                                    <button class="block">Block</button>
+                                </div>
+                            </div>
+                            <div class="name">
+                                <div class="us-name">Adarsh jayachandran</div>
+                                <button class="stats">Attention Stats</button>
+                                <div class="ev">
+                                    <button class="alert">Alert </button>
+                                    <button class="block">Block</button>
+                                </div>
+                            </div> -->
+                            
+                        </div>
+                    </div>
+               </div>
+    
+               <div class="sec-2">
+                <h4>join Requests</h4>
+                    <div class="member-list">
+                        <div id="req-list" class="user-req">
+
+                            <!-- <div class="name">
+                                <div class="rn"><span>Aiswarya</span></div>
+                                <div class="req">
+                                    <button class="ac">Accept</button>
+                                <button class="dn">Deny</button>
+                                </div>
+                            </div>
+
+                            <div class="name">
+                                <div class="rn"><span>Reshmi</span></div>
+                                <div class="req">
+                                    <button class="ac">Accept</button>
+                                <button class="dn">Deny</button>
+                                </div>
+                            </div>
+
+                            <div class="name">
+                                <div class="rn"><span>Krishnaja</span></div>
+                                <div class="req">
+                                    <button class="ac">Accept</button>
+                                <button class="dn">Deny</button>
+                                </div>
+                            </div> -->
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</form>
+<script
+  src="https://code.jquery.com/jquery-3.5.0.min.js"
+  integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+  crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+<script>
+
+  // user list of current session
+  function successFunction(value){
+    console.log(value['data'])
+    // console.log(value['data'][0].user)
+    var user_list = document.getElementById("us-list");
+    var req_list = document.getElementById("req-list");
+
+    user_list.innerHTML = ""
+    req_list.innerHTML = ""
+    
+    for( i=0 ; i< value['data'].length;i++){
+        // console.log(value)
+        var name = value['data'][i].user;
+        var id = value['data'][i].user_id
+        console.log(value['data'][i].permission)
+        if(value['data'][i].permission == 'ACTIVE'){
+            var  item = '<div class="name"><div class="us-name">'+name+'</div><button  class="stats">Attention Stats</button><div type="button" onclick="'+'acceptRequest(\''+id+'\')'+'" class="ev"><button type="button" onclick="'+'denyRequest(\''+id+'\')'+'" class="block">Remove</button></div></div>';
+            user_list.innerHTML += item
+        }else{
+
+            var req_item = ' <div class="name"><div class="rn"><span>'+name+'</span></div><div class="req"><button type="button" onclick="'+'acceptRequest(\''+id+'\')'+'" class="ac">Accept</button><button class="dn">Deny</button></div></div>'
+            console.log(req_item)
+            req_list.innerHTML += req_item
+        }
+
+       
+
+        
+
+    }
+        
+    }
+    function acceptRequest(user_id){
+        // console.log('ddd')
+        data = 'type=accept&user='+user_id+''
+        $.ajax({
+            headers:{'X-CSRFToken':'{{ csrf_token }}'},
+            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+            url         : '{% url 'new' %}', // the url where we want to POST
+            data        : data, // our form data
+            dataType    : 'json', // what type of data do we expect back from the server
+            // success     : successFunction
+        });
+
+    }
+
+    function denyRequest(user_id){
+        // console.log('ddd')
+        data = 'type=deny&user='+user_id+''
+        $.ajax({
+            headers:{'X-CSRFToken':'{{ csrf_token }}'},
+            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+            url         : '{% url 'new' %}', // the url where we want to POST
+            data        : data, // our form data
+            dataType    : 'json', // what type of data do we expect back from the server
+            // success     : successFunction
+        });
+
+    }
+
+    // const key = {{session_key}};
+    // const user  = {{user}};
+
+
+    function getSeesionKey(){
+        return '{{session_key}}'
+    }
+    function getUser(){
+        return '{{user}}'
+    }
+
+    function displayData(data){
+        console.log(data.data['100'])
+    }
+
+
+ 
+    function getData(){
+        data = 'type=None&user=none'
+        $.ajax({
+            headers:{'X-CSRFToken':'{{ csrf_token }}'},
+            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+            url         : '{% url 'new' %}', // the url where we want to POST
+            data        : data, // our form data
+            dataType    : 'json', // what type of data do we expect back from the server
+            success     : successFunction
+        });
+        
+        setTimeout(getData, 1000);
+}
+getData();
+
+// new Chart(document.getElementById("line-chart"), {
+//   type: 'line',
+//   data: {
+//     labels: time,
+//     datasets: [{ 
+//         data: mr,
+//         label: "MR",
+//         borderColor: "#3e95cd",
+//         fill: false
+//       }, { 
+//         data: [282,350,411,502,635,809,947,1402,3700,5267],
+//         label: ear,
+//         borderColor: "#8e5ea2",
+//         fill: false
+//       }, 
+//     ]
+//   },
+//   options: {
+//     title: {
+//       display: true,
+//       text: 'EAR and MR'
+//     }
+//   }
+// });
+
+
+</script>
+</body>
+</html>
